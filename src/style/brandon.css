@@ -2,7 +2,249 @@
     font-family: "AltonaSans";
     src: url("../font/AltonaSans.ttf");
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+    --primary: #9a7de5;
+    --header: #8f82eb;
+    --hover: #887de0;
+    --white: #ffffff;
+    --black: #1f1f1f;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
 body{
+    background-color: var(--white);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: var(--header);
+    height: 50px;
+    width: 100%;
+    z-index: 9;
+}
+header ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 40%;
+}
+header ul a, header ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    transition: 0.2s;
+}
+header ul li:hover{
+    background-color: var(--hover);
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+header a{
+    color: var(--white);
+    font-size: 18px;
+    text-decoration: none;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+#home{
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 0 160px 0 70px;
+    background-image: linear-gradient(
+    180deg,
+    rgb(153, 123, 229) 0%,
+    hsl(230deg 88% 73%) 16%,
+    hsl(214deg 100% 70%) 25%,
+    hsl(204deg 100% 66%) 32%,
+    hsl(198deg 100% 66%) 39%,
+    hsl(194deg 100% 70%) 45%,
+    hsl(189deg 96% 74%) 51%,
+    hsl(183deg 88% 80%) 57%,
+    hsl(183deg 88% 83%) 63%,
+    hsl(182deg 88% 86%) 69%,
+    hsl(182deg 88% 89%) 75%,
+    hsl(182deg 87% 92%) 81%,
+    hsl(182deg 87% 95%) 87%,
+    hsl(182deg 87% 97%) 93%,
+    hsl(0deg 0% 100%) 100%
+    );
+}
+#home h1{ 
+    z-index: 2;
+}
+.imgs-back{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+.imgs-back:nth-child(1){
+    top: 12%;
+    left: 10%;
+}
+.imgs-back:nth-child(2){
+    top: 80%;
+    left: 90%;
+}
+.imgs-back:nth-child(3){
+    top: 30%;
+    left: 50%;
+    width: 70px;
+}
+.imgs-back:nth-child(4){
+    top: 65%;
+    left: 30%;
+}
+.imgs-back:nth-child(5){
+    top: 85%;
+    left: 60%;
+    
+}
+.imgs-back:nth-child(6){
+    top: 78%;
+    left: 5%;
+    height: 30px;
+}
+.img-container-header{
+    transition: 0.3s;
+    width: 300px;
+    height: 300px;
+}
+.img-home1{
+    position: absolute;
+    width: 300px;
+    transition: 0.3s;
+    animation: img-animation1 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.img-home2{
+    position: absolute;
+    width: 300px;
+    transition: 0.3s;
+    animation: img-animation2 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes img-animation1 {
+    0%{
+        transform: scale(1) rotate(0deg);
+    }
+    25%{
+        transform: scale(1.2) rotate(90deg);
+    }
+    50%{
+        transform: scale(1) rotate(180deg);
+    }
+    75%{
+        transform: scale(1.2) rotate(270deg);
+    }
+    100%{
+        transform: scale(1) rotate(360deg);
+    }
+}
+@keyframes img-animation2 {
+    0%{
+        transform: scale(1.23) rotate(0deg);
+    }
+    25%{
+        transform: scale(0.99) rotate(-90deg);
+    }
+    50%{
+        transform: scale(1.1) rotate(-180deg);
+    }
+    75%{
+        transform: scale(1) rotate(-270deg);
+    }
+    100%{
+        transform: scale(1.23) rotate(-360deg);
+    }
+}
+.text-container h1{
     font-family: "AltonaSans";
+    font-size: 70px;
+    letter-spacing: 5px;
+    font-weight: 100;
+    line-height: 90px;
+    color: var(--white);
+}
+
+#about, #projects{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#about p {
+    width: 32%;
+    font-size: 30px;
+    text-align: justify;
+    font-weight: 400;
+
+}
+.skill-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.skill-container h1 span{
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+    padding: 4px;
+}
+
+.icons-skills{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.icons-skills img{
+    width: 120px;
+    margin: 10px;
+    transition: 0.2s;
+}
+.icons-skills img:hover{
+    transform: scale(1.04);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+}
+.card img{
+    border-radius: 10px 10px 0 0;
+    width: 500px;
+}
+.card h3{
+    padding: 10px;
 }
