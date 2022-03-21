@@ -68,9 +68,11 @@ export const Brandon = () => {
       </section>
 
       <section id='projects'>
+        <h1>Some of my projects</h1>
         <div className="cards-container">
-          {dataProjects.map(({title, code, deploy, img}) => (
+          {dataProjects.map(({id, title, code, deploy, img}) => (
             <Cards 
+              key = {id}
               title = {title}
               code = {code}
               deploy = {deploy}

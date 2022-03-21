@@ -11,8 +11,8 @@ export const Cards = ({title, code, deploy, img}) => {
             <div className="card-name-icon-container">
                 <h3>{title}</h3>
                 <div className="card-icon-container">
-                    <GrGithub size={'34px'} cursor={'pointer'} href={code}/>
-                    <ImChrome size={'34px'} cursor={'pointer'} href={deploy}/>
+                    <a className='card-link' target="_blank" rel="noreferrer" href={code}><GrGithub size={'34px'} cursor={'pointer'}/></a>
+                    <a className='card-link' target="_blank" rel="noreferrer" href={deploy}><ImChrome size={'30px'} cursor={'pointer'}/></a>
                 </div>
             </div>
         </div>

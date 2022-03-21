@@ -5,10 +5,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 :root{
     --primary: #9a7de5;
+    --second: #9EF5F9;
     --header: #8f82eb;
     --hover: #887de0;
     --white: #ffffff;
     --black: #1f1f1f;
+
+    --back-color : linear-gradient(
+        180deg,
+        rgb(153, 123, 229) 0%,
+        hsl(230deg 88% 73%) 16%,
+        hsl(214deg 100% 70%) 25%,
+        hsl(204deg 100% 66%) 32%,
+        hsl(198, 100%, 66%) 39%,
+        hsl(194, 100%, 70%) 45%,
+        hsl(189deg 96% 74%) 51%,
+        hsl(183deg 88% 80%) 57%,
+        hsl(183deg 88% 83%) 63%,
+        hsl(182deg 88% 86%) 69%,
+        hsl(182deg 88% 89%) 75%,
+        hsl(182deg 87% 92%) 81%,
+        hsl(182deg 87% 95%) 87%,
+        hsl(182deg 87% 97%) 93%,
+        hsl(0deg 0% 100%) 100%
+        );
 }
 *{
     padding: 0;
@@ -70,24 +90,7 @@ header a{
     height: 100vh;
     width: 100%;
     padding: 0 160px 0 70px;
-    background-image: linear-gradient(
-    180deg,
-    rgb(153, 123, 229) 0%,
-    hsl(230deg 88% 73%) 16%,
-    hsl(214deg 100% 70%) 25%,
-    hsl(204deg 100% 66%) 32%,
-    hsl(198, 100%, 66%) 39%,
-    hsl(194, 100%, 70%) 45%,
-    hsl(189deg 96% 74%) 51%,
-    hsl(183deg 88% 80%) 57%,
-    hsl(183deg 88% 83%) 63%,
-    hsl(182deg 88% 86%) 69%,
-    hsl(182deg 88% 89%) 75%,
-    hsl(182deg 87% 92%) 81%,
-    hsl(182deg 87% 95%) 87%,
-    hsl(182deg 87% 97%) 93%,
-    hsl(0deg 0% 100%) 100%
-    );
+    background-image: var(--back-color)
 }
 #home h1{ 
     z-index: 2;
@@ -233,7 +236,16 @@ header a{
     transform: scale(1.04);
 }
 
-
+#projects{
+    flex-direction: column;
+}
+#projects > h1{
+    position: relative;
+    margin-top: 35px;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
 .cards-container{
     width: 80%;
     display: flex;
@@ -316,4 +328,21 @@ header a{
     display: flex;
     margin-top: 10px;
     justify-content: space-around;
+}
+.card-link{
+    height: 38px;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+}
+.card-link:nth-child(2){
+    padding-top: 1px;
+    width: 38px;
+    height: 36px;
+}
+.card-link:hover{
+    border-radius: 20px;
+    border: 2px solid var(--header);
+    color: var(--header);
+    transform: scale(1.2);
 }
