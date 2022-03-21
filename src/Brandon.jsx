@@ -1,10 +1,13 @@
 import React from 'react'
 import './style/brandon.css'
 
+import dataProjects from './dataProjects';
+import { Cards } from './Cards';
+
 export const Brandon = () => {
 
   const parallax = (e) => {
-    const imgs = document.querySelectorAll('.imgs-back').forEach(img => {
+    document.querySelectorAll('.imgs-back').forEach(img => {
       const speed = img.getAttribute('speed');
       const x = (window.innerWidth - e.pageX*speed)/100;
       const y = (window.innerHeight - e.pageY*speed)/100;
@@ -24,20 +27,20 @@ export const Brandon = () => {
         </ul>
       </header>
       <section  className='flex' id="home" onMouseMove={parallax} >
-        <img className='imgs-back' src="./back-1.png" alt="back" speed="3"/>
-        <img className='imgs-back' src="./back-2.png" alt="back" speed="2"/>
-        <img className='imgs-back' src="./back-3.png" alt="back" speed="4"/>
-        <img className='imgs-back' src="./back-4.png" alt="back" speed="3"/>
-        <img className='imgs-back' src="./back-5.png" alt="back" speed="2"/>
-        <img className='imgs-back' src="./back-6.png" alt="back" speed="4"/>
+        <img className='imgs-back' src="https://i.imgur.com/sYqjFAZ.png" alt="back" speed="3"/>
+        <img className='imgs-back' src="https://i.imgur.com/zt2sRZq.png" alt="back" speed="2"/>
+        <img className='imgs-back' src="https://i.imgur.com/dzwhEty.png" alt="back" speed="4"/>
+        <img className='imgs-back' src="https://i.imgur.com/wKKPi20.png" alt="back" speed="3"/>
+        <img className='imgs-back' src="https://i.imgur.com/Y0973jg.png" alt="back" speed="2"/>
+        <img className='imgs-back' src="https://i.imgur.com/D6xIx4O.png" alt="back" speed="4"/>
         <div className="text-container flex-column">
           <h1>Hi</h1>
           <h1>I'm Brandon Triana</h1>
           <h1>Full Stack Developer</h1>
         </div>
         <div className='img-container-header'>
-          <img src="./BrandonOne.png" alt="brandon" className='img-home1'/>
-          <img src="./BrandonTwo.png" alt="brandon" className='img-home2'/>
+          <img src="https://i.imgur.com/gQInrrT.png" alt="brandon" className='img-home1'/>
+          <img src="https://i.imgur.com/5jJfOLk.png" alt="brandon" className='img-home2'/>
         </div>
       </section>
 
@@ -65,9 +68,15 @@ export const Brandon = () => {
       </section>
 
       <section id='projects'>
-        <div className="card">
-          <img src="./devs.png" alt="Devs"/>
-          <h3>DEVS_UNITED</h3>
+        <div className="cards-container">
+          {dataProjects.map(({title, code, deploy, img}) => (
+            <Cards 
+              title = {title}
+              code = {code}
+              deploy = {deploy}
+              img = {img}
+            />
+          ))}
         </div>
       </section>
     </div>
