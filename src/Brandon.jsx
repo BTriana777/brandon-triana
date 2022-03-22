@@ -119,7 +119,7 @@ export const Brandon = () => {
             <input type="tel" name="tel" placeholder='Phone' autoComplete="false"/>
             <textarea placeholder='Message' name="message" cols="30" rows="10" value={formValue.message} onChange={changeValue} ></textarea>
             <button type="submit" disabled={btnActive} style={{boxShadow:  `${btnActive? '' : '0 0 8px var(--primary)'}`, backgroundColor: `${btnActive? '' : 'var(--primary)'}` }} >SEND</button>
-            <input type="hidden" name="_next" value="http://localhost:3000/#contact"></input>
+            <input type="hidden" name="_next" value="https://btriana777.github.io/brandon-triana/"></input>
             <input type="hidden" name="_template" value="table"></input>
             <input type="hidden" name="_captcha" value="false"></input>
           </form>
