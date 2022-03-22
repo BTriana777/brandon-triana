@@ -103,7 +103,7 @@ export const Brandon = () => {
 
       <section id='about'>
         <p className='animate__animated animate__fadeInLeft'>I'm Brandon Triana Full Stack Developer, I'm from Colombia, I really like creating, learning or teaching. I specialize as Front end. I want to expand my knowledge and be able to develop mobile apps</p>
-        <div className='skill-container animate__animated animate__fadeInRight animate__fadeOutLeft'>
+        <div className='skill-container animate__animated animate__fadeInRight'>
           <h1>
             <span>S</span>
             <span>k</span>
