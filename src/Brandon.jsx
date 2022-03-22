@@ -3,17 +3,24 @@ import React, {useState} from 'react'
 import dataProjects from './dataProjects';
 import { Cards } from './Cards';
 import { GrGithub, GrLinkedin, GrInstagram } from "react-icons/gr";
+import { FaCircleNotch, FaCircle, FaHome, FaAngellist, FaReact, FaPhoneAlt} from "react-icons/fa";
 
-import './style/brandon.css'
+import './style/brandon.css';
+import 'animate.css';
 
 export const Brandon = () => {
 
   const [btnActive, setBtnActive] = useState(true)
+  const [btnNav, setBtnNav] = useState(false)
   const [formValue, setFormValue] = useState({
     name: '',
     email: '',
     message: ''
   })
+
+  const changeNav = () => {
+    setBtnNav(!btnNav)
+  }
   
   const changeValue = ({target}) => {
     setFormValue({
@@ -43,12 +50,33 @@ export const Brandon = () => {
   return (
     <div>
       <header>
-        <ul>
+        <ul className='nav-desktop'>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div className="btn-nav-mobile" onClick={changeNav}>
+          {
+            btnNav?
+            <FaCircleNotch color='#fff' size={'28px'}/>
+            :
+            <FaCircle color='#9a7de5' size={'28px'} />
+          }
+        </div>
+
+        <nav 
+          className={`nav-mobile-container animate__animated ${btnNav? 'animate__fadeInLeft': 'animate__fadeOutLeft'}`}
+          // style={{display: `${btnNav? 'block': 'none'}`}} 
+        >
+          <ul className='nav-mobile'>
+            <li><a href="#home" onClick={changeNav}>Home</a><FaHome color='#fff' size={'38px'} /></li>
+            <li><a href="#about" onClick={changeNav}>About</a><FaAngellist color='#fff' size={'32px'} /></li>
+            <li><a href="#projects" onClick={changeNav}>Projects</a><FaReact color='#fff' size={'32px'} /></li>
+            <li><a href="#contact" onClick={changeNav}>Contact</a><FaPhoneAlt color='#fff' size={'28px'} /></li>
+          </ul>
+        </nav>
+
       </header>
       <section  className='flex' id="home" onMouseMove={parallax} >
         <img className='imgs-back' src="https://i.imgur.com/sYqjFAZ.png" alt="back" speed="3"/>
@@ -74,8 +102,8 @@ export const Brandon = () => {
       </section>
 
       <section id='about'>
-        <p>I'm Brandon Triana Full Stack Developer, I'm from Colombia, I really like creating, learning or teaching. I specialize as Front end. I want to expand my knowledge and be able to develop mobile apps</p>
-        <div className='skill-container'>
+        <p className='animate__animated animate__fadeInLeft'>I'm Brandon Triana Full Stack Developer, I'm from Colombia, I really like creating, learning or teaching. I specialize as Front end. I want to expand my knowledge and be able to develop mobile apps</p>
+        <div className='skill-container animate__animated animate__fadeInRight animate__fadeOutLeft'>
           <h1>
             <span>S</span>
             <span>k</span>
