@@ -1,10 +1,35 @@
-import React from 'react'
-import './style/brandon.css'
+import React, {useState} from 'react'
 
 import dataProjects from './dataProjects';
 import { Cards } from './Cards';
+import { GrGithub, GrLinkedin, GrInstagram } from "react-icons/gr";
+
+import './style/brandon.css'
 
 export const Brandon = () => {
+
+  const [btnActive, setBtnActive] = useState(true)
+  const [formValue, setFormValue] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  
+  const changeValue = ({target}) => {
+    setFormValue({
+      ...formValue,
+      [target.name]: target.value
+    })
+    formValidator()
+  }
+
+  const formValidator = () => {
+    if((formValue.name.length > 0)&&(formValue.email.length > 0)&&(formValue.message.length > 4)){
+      setBtnActive(false)
+    }else{
+      setBtnActive(true)
+    }
+  }
 
   const parallax = (e) => {
     document.querySelectorAll('.imgs-back').forEach(img => {
@@ -15,7 +40,6 @@ export const Brandon = () => {
       img.style.cssText = `transform: translateX(${x}px) translateY(${y}px);`
     })
   }
-
   return (
     <div>
       <header>
@@ -37,6 +61,11 @@ export const Brandon = () => {
           <h1>Hi</h1>
           <h1>I'm Brandon Triana</h1>
           <h1>Full Stack Developer</h1>
+          <div className='icon-home'>
+            <a href="https://github.com/BTriana777" target="_blank" rel="noreferrer" ><GrGithub size={'28px'} color={'#fff'} cursor={'pointer'}/></a>
+            <a href="https://www.linkedin.com/in/brandontriana/" target="_blank" rel="noreferrer" ><GrLinkedin size={'28px'} color={'#fff'} cursor={'pointer'}/></a>
+            <a href="https://www.instagram.com/b_trianap/" target="_blank" rel="noreferrer" ><GrInstagram size={'28px'} color={'#fff'} cursor={'pointer'}/></a>
+          </div>
         </div>
         <div className='img-container-header'>
           <img src="https://i.imgur.com/gQInrrT.png" alt="brandon" className='img-home1'/>
@@ -80,6 +109,20 @@ export const Brandon = () => {
             />
           ))}
         </div>
+      </section>
+
+      <section id="contact">
+          <form action={`https://formsubmit.co/${process.env.REACT_APP_EMAIL}`} method="post">
+            <h1>Send me a messagge!</h1>
+            <input type="text" name="name" placeholder="Name"  autoComplete="false" value={formValue.name} onChange={changeValue} />
+            <input type="email" name='email' placeholder='Email' autoComplete="false" value={formValue.email} onChange={changeValue} />
+            <input type="tel" name="tel" placeholder='Phone' autoComplete="false"/>
+            <textarea placeholder='Message' name="message" cols="30" rows="10" value={formValue.message} onChange={changeValue} ></textarea>
+            <button type="submit" disabled={btnActive} style={{boxShadow:  `${btnActive? '' : '0 0 8px var(--primary)'}`, backgroundColor: `${btnActive? '' : 'var(--primary)'}` }} >SEND</button>
+            <input type="hidden" name="_next" value="http://localhost:3000/#contact"></input>
+            <input type="hidden" name="_template" value="table"></input>
+            <input type="hidden" name="_captcha" value="false"></input>
+          </form>
       </section>
     </div>
   )

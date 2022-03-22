@@ -191,8 +191,11 @@ header a{
     line-height: 90px;
     color: var(--white);
 }
-
-#about, #projects{
+.icon-home a{
+    text-decoration: none;
+    margin-right: 20px;
+}
+#about{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -223,6 +226,7 @@ header a{
 }
 
 .icons-skills{
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -237,7 +241,12 @@ header a{
 }
 
 #projects{
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
 }
 #projects > h1{
     position: relative;
@@ -345,4 +354,67 @@ header a{
     border: 2px solid var(--header);
     color: var(--header);
     transform: scale(1.2);
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(154,125,229);
+    background: linear-gradient(0deg, rgba(154,125,229,1) 18%, rgba(102,219,255,1) 83%, rgba(255,255,255,1) 100%);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    width: 60%;
+    height: 70%;
+    background-color: var(--black);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+form h1{
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+form input, form textarea{
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--primary);
+    margin: 15px;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--white);
+    border-radius: 12px;
+    width: 60%;
+}
+form input:focus, form textarea:focus{
+    outline: none;
+}
+
+form textarea{
+    font-size: 18px;
+    resize: none;
+}
+form textarea::placeholder, form input::placeholder {
+    color: var(--white);
+}
+form button{
+    cursor: pointer;
+    margin-top: 12px;
+    color: var(--white);
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border-radius: 20px;
+    width: 20%;
+    height: 8%;
+    transition: 0.2s;
 }
