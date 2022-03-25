@@ -453,6 +453,11 @@ form button{
     font-weight: 600;
     margin-right: 20px;
 }
+@media (max-width: 1100px){
+    .card{
+        width: 300px;
+    }
+}
 @media (max-width: 420px) {
     header{
         background-color: transparent;
