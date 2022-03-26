@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/brandon-triana/static/css/main.9b496d96.css",
+    "main.css": "/brandon-triana/static/css/main.5c548c67.css",
     "main.js": "/brandon-triana/static/js/main.cca29112.js",
     "static/media/AltonaSans.ttf": "/brandon-triana/static/media/AltonaSans.4e816ca53b32c370f42e.ttf",
     "index.html": "/brandon-triana/index.html",
-    "main.9b496d96.css.map": "/brandon-triana/static/css/main.9b496d96.css.map",
+    "main.5c548c67.css.map": "/brandon-triana/static/css/main.5c548c67.css.map",
     "main.cca29112.js.map": "/brandon-triana/static/js/main.cca29112.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b496d96.css",
+    "static/css/main.5c548c67.css",
     "static/js/main.cca29112.js"
   ]
 }
