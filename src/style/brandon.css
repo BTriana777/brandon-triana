@@ -421,11 +421,16 @@ form button{
 
  /* MOBILE  */
  .btn-nav-mobile{
+    display: none;
     width: 28px;
     display: flex;
     z-index: 10;
  }
+ .btn-nav-mobile svg{
+    display: none;  
+ }
 .nav-mobile-container{
+    display: none; 
     position: absolute;
     background-color: var(--primary);
     top: 0;
@@ -453,9 +458,23 @@ form button{
     font-weight: 600;
     margin-right: 20px;
 }
-@media (max-width: 1100px){
+@media (max-width: 1300px){
+    .imgs-back:nth-child(5){
+        top: 75%;
+        left: 60%;
+        
+    }
+    #projects > h1{
+        font-size: 35px;
+        margin-top: 60px;
+    }
     .card{
         width: 300px;
+        height: 180px;
+        margin: 25px 25px;
+    }
+    .cards-container{
+        width: 80%;
     }
 }
 @media (max-width: 420px) {
@@ -467,6 +486,15 @@ form button{
     .nav-desktop{
         display: none;
     }
+    .nav-mobile-container{
+        display: block;
+    }
+    .btn-nav-mobile{
+        display: block;
+    }
+    .btn-nav-mobile svg{
+        display: block;  
+     }
     #home{
         flex-direction: column;
         justify-content: space-around;
