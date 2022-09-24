@@ -383,6 +383,7 @@ form h1{
     font-size: 28px;
     font-weight: 400;
     margin-bottom: 10px;
+    margin-top: 8px;
 }
 form input, form textarea{
     background-color: rgba(0, 0, 0, 0.2);
